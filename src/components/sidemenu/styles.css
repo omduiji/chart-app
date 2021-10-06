@@ -1,0 +1,18 @@
+.sidemenu {
+  grid-area: sidebar;
+  padding: 1em .5em;
+  border-right: 1px solid #CCC
+}
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+li {
+  display: flex;
+  padding: 1em
+}
+h2 {
+  text-align: start;
+}

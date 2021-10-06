@@ -1,0 +1,45 @@
+.inputs {
+  display: flex;
+  flex-direction: column;
+  padding: 1em 10em;
+}
+.input-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: .5em;
+  
+}
+
+.input-field p {
+  margin-right: .25em;
+  min-width: 100px;
+}
+.field {
+  display: flex;
+  flex-grow: 1;
+  
+ 
+}
+.field-area { flex-grow: 1;  border: 1px solid #ccc; padding: .5em .75em;}
+ .field-area ul {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+
+.field-area ul li {
+  padding: .25em;
+  margin-right: 1em;
+  border: 1px solid #ccc
+  
+  
+}
+
+.field button {
+  background-color: transparent;
+  color: black;
+  font-size: 1rem;
+  outline: none;
+  border: 1px solid #ccc;
+}
