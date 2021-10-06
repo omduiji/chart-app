@@ -17,7 +17,7 @@ function Sidemenu() {
         <h2>Columns</h2>
         <ul>
           {columns.map((item, index) => (
-            <li key={index}>
+            <li key={index} draggable="true">
               {item.name}
               <span className="type">{item.function.toUpperCase()}</span>
             </li>
