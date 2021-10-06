@@ -123,13 +123,36 @@ const reduced = temp.reduce((acc, curr) => {
   acc.push(arr);
   return acc;
 }, []);
-const [...t] = reduced;
-console.log(t);
+const zip = (...arr) => {
+  const zipped = [];
+  arr.forEach((item, ind) => {
+    item.forEach((i, index) => {
+      if (!zipped[index]) {
+        zipped[index] = [];
+      };
+      if (!zipped[index][ind]) {
+        zipped[index][ind] = [];
+      }
+      zipped[index][ind] = i || '';
+    })
+  });
+  return zipped;
+};
+let rrr = zip(...reduced).reduce((acc, curr) => {
+  let obj = {}
+  curr.map(item => {
+    obj[`${Object.keys(item)[0]}`] = Object.values(item)[0]
+  })
+  acc.push(obj)
+  return acc
+}, [])
+console.log(zip(...reduced))
+console.log(rrr)
 function Chart() {
   return (
     <LineChart
-      width={1000}
-      height={800}
+      width={800}
+      height={600}
       data={data}
       margin={{
         top: 5,
@@ -138,7 +161,7 @@ function Chart() {
         bottom: 5,
       }}
     >
-      <CartesianGrid strokeDasharray="6 6" />
+      <CartesianGrid strokeDasharray="10 10" />
       <XAxis dataKey="name" />
       <YAxis />
       <Tooltip />
@@ -150,6 +173,7 @@ function Chart() {
           stroke="#8884d8"
           activeDot={{ r: 8 }}
           legendType="pipeline"
+          key={index}
         />
       ))}
       {/* <Line
