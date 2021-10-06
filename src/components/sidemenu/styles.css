@@ -11,7 +11,14 @@ ul {
 }
 li {
   display: flex;
-  padding: 1em
+  padding: 1em;
+  align-items: center;
+  justify-content: space-between;
+}
+.type {
+  padding: .25em .5em;
+  background-color: #ccc;
+  color: black;
 }
 h2 {
   text-align: start;

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import {
   LineChart,
   Line,
@@ -7,7 +7,6 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer,
 } from 'recharts';
 
 const data = [
@@ -57,44 +56,42 @@ const data = [
 
 function Chart() {
   return (
-    <ResponsiveContainer width={800} height={800}>
-      <LineChart
-        width={700}
-        height={500}
-        data={data}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="6 6" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Line
-          type="monotone"
-          dataKey="pv"
-          stroke="#8884d8"
-          activeDot={{ r: 8 }}
-          legendType="pipeline"
-        />
-        <Line
-          type="monotone"
-          dataKey="uv"
-          stroke="#82ca9d"
-          legendType="pipeline"
-        />
-        <Line
-          type="monotone"
-          dataKey="amt"
-          stroke="#82ca9d"
-          legendType="pipeline"
-        />
-      </LineChart>
-    </ResponsiveContainer>
+    <LineChart
+      width={1000}
+      height={800}
+      data={data}
+      margin={{
+        top: 5,
+        right: 30,
+        left: 20,
+        bottom: 5,
+      }}
+    >
+      <CartesianGrid strokeDasharray="6 6" />
+      <XAxis dataKey="name" />
+      <YAxis />
+      <Tooltip />
+      <Legend />
+      <Line
+        type="monotone"
+        dataKey="pv"
+        stroke="#8884d8"
+        activeDot={{ r: 8 }}
+        legendType="pipeline"
+      />
+      <Line
+        type="monotone"
+        dataKey="uv"
+        stroke="#82ca9d"
+        legendType="pipeline"
+      />
+      <Line
+        type="monotone"
+        dataKey="amt"
+        stroke="#82ca9d"
+        legendType="pipeline"
+      />
+    </LineChart>
   );
 }
 export default Chart;
